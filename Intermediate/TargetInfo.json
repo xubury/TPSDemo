@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "TPSDemo",
+			"Path": "F:\\UnrealProjects\\TPSDemo\\Source\\TPSDemo.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "TPSDemoEditor",
+			"Path": "F:\\UnrealProjects\\TPSDemo\\Source\\TPSDemoEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

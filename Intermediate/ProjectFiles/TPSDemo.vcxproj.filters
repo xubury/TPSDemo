@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\TPSDemo.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{6E5B00B2-085F-478F-8C3B-141CD9B77A88}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\TPSDemo.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\TPSDemoEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{07833D72-CCC4-43F2-B696-07C9CD286629}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\TPSDemo">
+      <UniqueIdentifier>{00D31DA1-DE1F-4F57-A1E7-0F17E88E6A76}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TPSDemo\ShooterMovementComponent.cpp">
+      <Filter>Source\TPSDemo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPSDemo\ShooterMovementComponent.h">
+      <Filter>Source\TPSDemo</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPSDemo\ShooterPawn.cpp">
+      <Filter>Source\TPSDemo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPSDemo\ShooterPawn.h">
+      <Filter>Source\TPSDemo</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPSDemo\ShooterRaycastComponent.cpp">
+      <Filter>Source\TPSDemo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPSDemo\ShooterRaycastComponent.h">
+      <Filter>Source\TPSDemo</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPSDemo\TPSCamera.cpp">
+      <Filter>Source\TPSDemo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPSDemo\TPSCamera.h">
+      <Filter>Source\TPSDemo</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\TPSDemo\TPSDemo.Build.cs">
+      <Filter>Source\TPSDemo</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\TPSDemo\TPSDemo.cpp">
+      <Filter>Source\TPSDemo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPSDemo\TPSDemo.h">
+      <Filter>Source\TPSDemo</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPSDemo\TPSDemoGameModeBase.cpp">
+      <Filter>Source\TPSDemo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPSDemo\TPSDemoGameModeBase.h">
+      <Filter>Source\TPSDemo</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPSDemo\TPSHUD.cpp">
+      <Filter>Source\TPSDemo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPSDemo\TPSHUD.h">
+      <Filter>Source\TPSDemo</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
