@@ -65,23 +65,23 @@ void UShooterMovementComponent::TickComponent(float DeltaTime, enum ELevelTick T
 		Movement = MovementMode::Left;
 	}
 
-	const FVector OldVelocity = Velocity;
-
 	// Simulating Gravity
 	const FVector Gravity(0.f, 0.f, GetGravityZ());
-	Velocity = NewFallVelocity(Velocity, Gravity, DeltaTime);
+	FVector Adjust = NewFallVelocity(Velocity, Gravity, DeltaTime) - Velocity;
+	MoveUpdatedComponent(Adjust * DeltaTime * 40.f, Rotation, true);
 
-	FVector Adjust = Velocity - OldVelocity;
-
-
-	FVector Delta = Adjust * DeltaTime * 40.f 
-					+ Input * DeltaTime * MovementSpeed;
+	FVector Delta = Input * DeltaTime * MovementSpeed;
 	FVector OldLocation = UpdatedComponent->GetComponentLocation();
 	if (!Delta.IsNearlyZero()) {
 		FHitResult Hit;
 		SafeMoveUpdatedComponent(Delta, Rotation, true, Hit);
 		if (Hit.IsValidBlockingHit()) {
-			SlideAlongSurface(Delta, 1.f - Hit.Time, Hit.Normal, Hit);
+			float GravityProj = FVector::DotProduct(Hit.Normal, -Gravity.GetSafeNormal());
+			// 0.707 is about 60 degrees
+			if (GravityProj > 0.866f) { 
+				FVector Slide = ComputeSlideVector(Delta, 1.f - Hit.Time, Hit.Normal, Hit);
+				MoveUpdatedComponent(Slide, Rotation, true);
+			}
 		}
 
 	}
