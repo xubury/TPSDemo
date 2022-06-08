@@ -33,15 +33,13 @@ void UShooterRaycastComponent::TickComponent(float DeltaTime, ELevelTick TickTyp
 	// ...
 }
 
-bool UShooterRaycastComponent::CastRay(const FVector &Dir, float Length, FHitResult& Result)
+bool UShooterRaycastComponent::CastRay(const FVector &End, FHitResult& Result)
 {
 	bool bHit = false;
-
 	FVector Start = GetComponentLocation();
-	FVector End = Start + Dir * Length;
 	TArray<AActor*> ActorToIgnore;
 	bHit = UKismetSystemLibrary::LineTraceSingle(this, Start, End, UEngineTypes::ConvertToTraceType(ECC_Camera),
-												 false, ActorToIgnore, EDrawDebugTrace::ForDuration,Result, true);
+												 false, ActorToIgnore, EDrawDebugTrace::ForDuration, Result, true);
 	return bHit;
 }
 

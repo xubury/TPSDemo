@@ -125,17 +125,17 @@ void UShooterMovementComponent::HandleRotation()
 		world->GetGameViewport()->GetMousePosition(mousePos);
 
 		// Consturct the mouse ray
-		Ray mouseRay;
+		Ray MouseRay;
 		UGameplayStatics::DeprojectScreenToWorld(UGameplayStatics::GetPlayerController(this, 0),
-			mousePos, mouseRay.Origin, mouseRay.Direction);
-		Plane plane;
-		plane.Point = TargetPos;
-		plane.Normal = FVector::UpVector;
+			mousePos, MouseRay.Origin, MouseRay.Direction);
+		Plane HitPlane;
+		HitPlane.Point = TargetPos;
+		HitPlane.Normal = FVector::UpVector;
 
-		FVector intersectPos;
-		if (IntersectRayPlane(mouseRay, plane, intersectPos))
+		FVector Intersect;
+		if (IntersectRayPlane(MouseRay, HitPlane, Intersect))
 		{
-			FVector Dir = intersectPos - plane.Point;
+			FVector Dir = Intersect - HitPlane.Point;
 			UpdatedComponent->SetWorldRotation(Dir.Rotation());
 		}
 

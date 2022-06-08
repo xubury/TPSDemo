@@ -8,6 +8,7 @@
 #include "Components/SkeletalmeshComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "ShooterMovementComponent.h"
+#include "ShooterRaycastComponent.h"
 #include "ShooterPawn.generated.h"
 
 
@@ -39,6 +40,9 @@ public:
 	void MoveRight(float Value);
 
 	void MoveForward(float Value);
+
+	void Shoot();
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Gameplay)
 	UCapsuleComponent* CapsuleComponent;
 
@@ -47,4 +51,7 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Gameplay)
 	UShooterMovementComponent* MovementComponent;
+
+	UPROPERTY(VisibleAnywhere)
+	UShooterRaycastComponent* RaycastComponent;
 };

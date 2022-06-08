@@ -2,6 +2,7 @@
 
 
 #include "ShooterPawn.h"
+#include "DrawDebugHelpers.h"
 
 
 // Sets default values
@@ -23,6 +24,9 @@ AShooterPawn::AShooterPawn()
 	MovementComponent->UpdatedComponent = RootComponent;
 
     AutoPossessPlayer = EAutoReceiveInput::Player0;
+
+	RaycastComponent = CreateDefaultSubobject<UShooterRaycastComponent>(TEXT("RaycastComponent"));
+	RaycastComponent->SetupAttachment(RootComponent);
 }
 
 // Called when the game starts or when spawned
@@ -45,6 +49,7 @@ void AShooterPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 	PlayerInputComponent->BindAxis("MoveForward", this, &AShooterPawn::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AShooterPawn::MoveRight);
+	PlayerInputComponent->BindAction("Shoot", IE_Pressed, this, &AShooterPawn::Shoot);
 }
 
 void AShooterPawn::MoveRight(float Value)
@@ -66,3 +71,11 @@ void AShooterPawn::MoveForward(float Value)
 	}
 }
 
+
+void AShooterPawn::Shoot()
+{
+	const float Length = 2000.f;
+	FVector End = GetActorLocation() + FVector(0, 0, BaseEyeHeight) + GetActorForwardVector() * Length;
+	FHitResult Result;
+	RaycastComponent->CastRay(End, Result);
+}

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\TPSDemo.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{6E5B00B2-085F-478F-8C3B-141CD9B77A88}</UniqueIdentifier>
+      <UniqueIdentifier>{BB4ADC56-0D17-4D57-965E-B1833ABD1764}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\TPSDemo.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,10 @@
     <None Include="..\..\Source\TPSDemoEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{07833D72-CCC4-43F2-B696-07C9CD286629}</UniqueIdentifier>
+      <UniqueIdentifier>{71ED6AE2-C29C-411D-B3D7-63A85473FA87}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,8 +29,14 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\TPSDemo">
-      <UniqueIdentifier>{00D31DA1-DE1F-4F57-A1E7-0F17E88E6A76}</UniqueIdentifier>
+      <UniqueIdentifier>{0EB2BE84-F4C3-4DBF-A630-5C6C44E9F2E8}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\TPSDemo\EnemyActor.cpp">
+      <Filter>Source\TPSDemo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPSDemo\EnemyActor.h">
+      <Filter>Source\TPSDemo</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\TPSDemo\ShooterMovementComponent.cpp">
       <Filter>Source\TPSDemo</Filter>
     </ClCompile>

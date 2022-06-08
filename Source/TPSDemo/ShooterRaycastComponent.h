@@ -25,5 +25,5 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 		
-	bool CastRay(const FVector &Dir, float Length, FHitResult& Result);
+	bool CastRay(const FVector &End, FHitResult& Result);
 };
